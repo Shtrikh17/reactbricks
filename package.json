@@ -2,7 +2,6 @@
   "name": "@shtrikh17/reactbricks",
   "version": "0.0.1",
   "description": "Set of styling and functional components for React and Ant Design",
-  "main": "./lib/react-bricks.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "prepack": "yarn build"
@@ -39,5 +38,8 @@
   },
   "devDependencies": {
     "webpack-cli": "^5.1.4"
+  },
+  "exports": {
+    ".": "./src/index.ts"
   }
 }

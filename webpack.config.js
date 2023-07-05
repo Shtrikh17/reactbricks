@@ -11,7 +11,8 @@ module.exports = (env) => ({
         filename: 'react-bricks.js',
         path: path.resolve(__dirname, 'lib'),
         assetModuleFilename: 'assets/[hash][ext]',
-        publicPath: "/"
+        library: "react-bricks",
+        libraryTarget: "umd",
     },
     plugins: [
         new MiniCssExtractPlugin(),

@@ -2,12 +2,8 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "umd",
-    "lib": [
-      "ESNext",
-      "dom"
-    ],
+    "lib": ["ESNext", "dom"],
     "jsx": "react",
-    "noEmit": true,
     "sourceMap": true,
     "allowJs": true,
 
@@ -20,7 +16,12 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "lib",
+    "declarationDir": "lib/types"
   },
   "include": ["src"]
 }

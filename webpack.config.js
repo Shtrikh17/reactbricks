@@ -13,13 +13,6 @@ module.exports = (env) => ({
         assetModuleFilename: 'assets/[hash][ext]',
         publicPath: "/"
     },
-    resolve: {
-        fallback: {
-            fs: false,
-            'process/browser': require.resolve("process/browser")
-        },
-        extensions: [".tsx", ".ts", "..."]
-    },
     plugins: [
         new MiniCssExtractPlugin(),
         new webpack.ProvidePlugin({process: 'process/browser'}),
@@ -29,10 +22,7 @@ module.exports = (env) => ({
             {
                 test: /\.(js|ts)x?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    "presets": ["@babel/preset-typescript", "@babel/preset-env", "@babel/preset-react"]
-                }
+                use: 'ts-loader'
             },
             {
                 test: /\.scss$/,
@@ -58,5 +48,12 @@ module.exports = (env) => ({
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             }
         ],
-    }
+    },
+    resolve: {
+        fallback: {
+            fs: false,
+            'process/browser': require.resolve("process/browser")
+        },
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    },
 })

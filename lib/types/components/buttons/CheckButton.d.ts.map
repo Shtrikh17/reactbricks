@@ -1,0 +1,1 @@
+{"version":3,"file":"CheckButton.d.ts","sourceRoot":"","sources":["../../../../src/components/buttons/CheckButton.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAA;AAMzB,UAAU,YAAY;IAClB,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,OAAO,CAAC,EAAE,MAAM,IAAI,CAAA;CACvB;AAED,QAAA,MAAM,WAAW,6BAA4B,YAAY,sBAUxD,CAAA;AAED,eAAe,WAAW,CAAA"}

@@ -68,4 +68,5 @@ const useReactBricksTheme = () => {
     return context;
 }
 
-export {ReactBricksThemeExport, ReactBricksThemeContext, ReactBricksThemeProvider, useReactBricksTheme}
+export type {ReactBricksThemeExport}
+export {ReactBricksThemeContext, ReactBricksThemeProvider, useReactBricksTheme}

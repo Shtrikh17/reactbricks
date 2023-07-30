@@ -1,11 +1,5 @@
-import CheckButton from "./components/buttons/CheckButton";
-import * as ReactBricksGeneralStyles from "./styles/generalStyles"
-import {ReactBricksThemeProvider} from "./themeProvider/ReactBricksThemeProvider";
-import {useReactBricksTheme} from "./themeProvider/ReactBricksThemeProvider";
+import {TestButton} from "./components/buttons/TestButton";
+import CheckButton from "@root/components/buttons/CheckButton";
+import {ReactBricksThemeProvider} from "@root/themeProvider/ReactBricksThemeProvider";
 
-export {
-    CheckButton,
-    ReactBricksGeneralStyles,
-    ReactBricksThemeProvider,
-    useReactBricksTheme
-}
+export {TestButton, ReactBricksThemeProvider, CheckButton}

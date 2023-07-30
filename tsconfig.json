@@ -1,27 +1,33 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "umd",
-    "lib": ["ESNext", "dom"],
-    "jsx": "react",
-    "sourceMap": true,
+    "outDir": "./dist",
+    "target": "es6",
+    "lib": ["dom", "esnext"],
     "allowJs": true,
-
-    /* Strict Type-Checking Options */
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-
-    /* Module Resolution Options */
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "noImplicitAny": false,
+    "jsx": "react-jsx",
+    "paths": {
+      "@root/*": ["./src/*"]
+    },
 
-    "declaration": true,
     "declarationMap": true,
-    "outDir": "lib",
-    "declarationDir": "lib/types"
+    "sourceMap": true,
+    "declarationDir": "dist/types",
+    "strictNullChecks": true,
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

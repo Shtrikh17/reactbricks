@@ -1,21 +1,18 @@
 const path = require("path")
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require("webpack")
-const { DefinePlugin } = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = (env) => ({
-    mode: 'development',
+    mode: "development",
     entry: './src/index.ts',
     devtool: 'source-map',
     output: {
         filename: 'react-bricks.js',
-        path: path.resolve(__dirname, 'lib'),
-        assetModuleFilename: 'assets/[hash][ext]',
-        library: "react-bricks",
-        libraryTarget: "umd",
+        library: "$",
+        libraryTarget: 'umd',
+        path: path.resolve(__dirname, "dist")
     },
     plugins: [
-        new MiniCssExtractPlugin(),
         new webpack.ProvidePlugin({process: 'process/browser'}),
     ],
     module: {
@@ -23,38 +20,19 @@ module.exports = (env) => ({
             {
                 test: /\.(js|ts)x?$/,
                 exclude: /node_modules/,
-                use: 'ts-loader'
-            },
-            {
-                test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.less/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', {
-                    loader: 'less-loader',
-                    options: {
-                        lessOptions:{
-                            javascriptEnabled: true
-                        }
-                    }
-                }]
+                use: ['babel-loader', 'ts-loader']
             },
             {
                 test: /\.(?:svg|ttf|ico|gif|png|jpg|jpeg|eot|woff2|woff)$/i,
                 type: 'asset/resource',
-            },
-            {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
             }
         ],
     },
+    externals: [nodeExternals()],
     resolve: {
-        fallback: {
-            fs: false,
-            'process/browser': require.resolve("process/browser")
+        alias: {
+            '@root': path.resolve(__dirname, 'src')
         },
-        extensions: ['.tsx', '.ts', '.js', '.jsx'],
-    },
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+    }
 })
